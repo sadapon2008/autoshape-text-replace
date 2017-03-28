@@ -23,9 +23,13 @@ public class Application {
 		if (args.length < 4) {
 			System.exit(1);
 		}
+		// 置換対象の文字列
 		String textTarget = args[0];
+		// 置換後の文字列
 		String textReplacement = args[1];
+		// 置換対象の.xlsxファイル
 		String filenameSrc = args[2];
+		// 置換後に作成される.xlsxファイル
 		String filenameDest = args[3];
 		
 		try {
