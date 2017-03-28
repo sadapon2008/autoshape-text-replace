@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin:'application'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+mainClassName = 'sadapon2008.Application'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.apache.poi', name: 'poi', version: '3.15'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
+
+    testCompile 'junit:junit:4.12'
+}
+
+run {
+    if (project.hasProperty("appArgs")) {
+        args Eval.me(appArgs)
+    }
+}
